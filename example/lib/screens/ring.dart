@@ -49,17 +49,6 @@ class _ExampleAlarmRingScreenState extends State<ExampleAlarmRingScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                RawMaterialButton(
-                  onPressed: () async => Alarm.set(
-                    alarmSettings: widget.alarmSettings.copyWith(
-                      dateTime: DateTime.now().add(const Duration(minutes: 1)),
-                    ),
-                  ),
-                  child: Text(
-                    'Snooze',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                ),
                 //NOTE: 停止したら削除されるのでここを停止しても削除されないように変える。 （Alarm.stop が削除の意味）
                 RawMaterialButton(
                   onPressed: () async => {
@@ -67,10 +56,34 @@ class _ExampleAlarmRingScreenState extends State<ExampleAlarmRingScreen> {
                     Alarm.set(
                         alarmSettings: widget.alarmSettings.copyWith(
                       dateTime: DateTime.now().add(const Duration(days: 1)),
-                    ))
+                    )),
                   },
                   child: Text(
                     'Stop',
+                    style: Theme.of(context).textTheme.titleSmall,
+                  ),
+                ),
+                RawMaterialButton(
+                  onPressed: () async => Alarm.set(
+                    alarmSettings: widget.alarmSettings.copyWith(
+                      dateTime: DateTime.now().add(const Duration(minutes: 1)),
+                    ),
+                  ),
+                  fillColor: const Color.fromARGB(255, 255, 0, 0),
+                  child: Text(
+                    '1min',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
+                RawMaterialButton(
+                  onPressed: () async => Alarm.set(
+                    alarmSettings: widget.alarmSettings.copyWith(
+                      dateTime: DateTime.now().add(const Duration(minutes: 3)),
+                    ),
+                  ),
+                  fillColor: const Color.fromARGB(255, 254, 241, 0),
+                  child: Text(
+                    '2min',
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),

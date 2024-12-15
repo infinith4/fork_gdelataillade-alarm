@@ -35,11 +35,11 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
       selectedDateTime = DateTime.now().add(const Duration(minutes: 1));
       selectedDateTime = selectedDateTime.copyWith(second: 0, millisecond: 0);
       loopAudio = true;
-      vibrate = true;
+      vibrate = false;
       volume = null;
       fadeDuration = null;
       staircaseFade = false;
-      assetAudio = 'assets/marimba.mp3';
+      assetAudio = 'assets/su698.mp3';
       //enabledAlarm = true;
     } else {
       selectedDateTime = widget.alarmSettings!.dateTime;
@@ -243,6 +243,34 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
               DropdownButton(
                 value: assetAudio,
                 items: const [
+                  DropdownMenuItem<String>(
+                    value: 'assets/su698.mp3',
+                    child: Text('su698'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'assets/sm0121.mp3',
+                    child: Text('sm0121'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'assets/sm0154.mp3',
+                    child: Text('sm0154'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'assets/su1171.mp3',
+                    child: Text('su1171'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'assets/su1329.mp3',
+                    child: Text('su1329'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'assets/su1357.mp3',
+                    child: Text('su1357'),
+                  ),
+                  DropdownMenuItem<String>(
+                    value: 'assets/su1371.mp3',
+                    child: Text('su1371'),
+                  ),
                   DropdownMenuItem<String>(
                     value: 'assets/marimba.mp3',
                     child: Text('Marimba'),

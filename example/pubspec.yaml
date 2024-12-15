@@ -26,8 +26,15 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/marimba.mp3
     - assets/mozart.mp3
     - assets/nokia.mp3
     - assets/one_piece.mp3
     - assets/star_wars.mp3
-    - assets/marimba.mp3
+    - assets/sm0121.mp3
+    - assets/sm0154.mp3
+    - assets/su698.mp3
+    - assets/su1171.mp3
+    - assets/su1329.mp3
+    - assets/su1357.mp3
+    - assets/su1371.mp3
