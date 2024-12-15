@@ -4,11 +4,12 @@ class ExampleAlarmTile extends StatelessWidget {
   const ExampleAlarmTile({
     required this.title,
     required this.onPressed,
+    required this.enabledAlarm,
     super.key,
     this.onDismissed,
   });
-
   final String title;
+  final bool enabledAlarm;
   final void Function() onPressed;
   final void Function()? onDismissed;
 
@@ -45,7 +46,12 @@ class ExampleAlarmTile extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              const Icon(Icons.keyboard_arrow_right_rounded, size: 35),
+              Switch.adaptive(
+                value: enabledAlarm,
+                onChanged: (value) => {value},
+              ),
+              // const Icon(Icons.keyboard_arrow_right_rounded,
+              //     size: 35), //NOTE: 右やじるし
             ],
           ),
         ),

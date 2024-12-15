@@ -60,8 +60,15 @@ class _ExampleAlarmRingScreenState extends State<ExampleAlarmRingScreen> {
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                 ),
+                //NOTE: 停止したら削除されるのでここを停止しても削除されないように変える。 （Alarm.stop が削除の意味）
                 RawMaterialButton(
-                  onPressed: () async => Alarm.stop(widget.alarmSettings.id),
+                  onPressed: () async => {
+                    Alarm.stop(widget.alarmSettings.id),
+                    Alarm.set(
+                        alarmSettings: widget.alarmSettings.copyWith(
+                      dateTime: DateTime.now().add(const Duration(days: 1)),
+                    ))
+                  },
                   child: Text(
                     'Stop',
                     style: Theme.of(context).textTheme.titleLarge,

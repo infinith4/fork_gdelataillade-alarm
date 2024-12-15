@@ -24,6 +24,7 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
   late Duration? fadeDuration;
   late bool staircaseFade;
   late String assetAudio;
+  late bool enabledAlarm;
 
   @override
   void initState() {
@@ -39,6 +40,7 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
       fadeDuration = null;
       staircaseFade = false;
       assetAudio = 'assets/marimba.mp3';
+      //enabledAlarm = true;
     } else {
       selectedDateTime = widget.alarmSettings!.dateTime;
       loopAudio = widget.alarmSettings!.loopAudio;
@@ -47,6 +49,7 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
       fadeDuration = widget.alarmSettings!.volumeSettings.fadeDuration;
       staircaseFade = widget.alarmSettings!.volumeSettings.fadeSteps.isNotEmpty;
       assetAudio = widget.alarmSettings!.assetAudioPath;
+      //enabledAlarm = widget.alarmSettings!.enabledAlarm;
     }
   }
 
@@ -188,7 +191,7 @@ class _ExampleAlarmEditScreenState extends State<ExampleAlarmEditScreen> {
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
-                .copyWith(color: Colors.blueAccent.withValues(alpha: 0.8)),
+                .copyWith(color: Colors.blueAccent),
           ),
           RawMaterialButton(
             onPressed: pickTime,

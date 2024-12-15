@@ -108,9 +108,11 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
                   return ExampleAlarmTile(
                     key: Key(alarms[index].id.toString()),
                     title: TimeOfDay(
+                      //NOTE: 各アラームのタイトル
                       hour: alarms[index].dateTime.hour,
                       minute: alarms[index].dateTime.minute,
                     ).format(context),
+                    enabledAlarm: false, //NOTE: アラームの有効・無効
                     onPressed: () => navigateToAlarmScreen(alarms[index]),
                     onDismissed: () {
                       Alarm.stop(alarms[index].id).then((_) => loadAlarms());

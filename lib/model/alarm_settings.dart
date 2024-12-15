@@ -21,6 +21,7 @@ class AlarmSettings {
     this.warningNotificationOnKill = true,
     this.androidFullScreenIntent = true,
     this.allowAlarmOverlap = false,
+    //this.enabledAlarm = true,
   });
 
   /// Constructs an `AlarmSettings` instance from the given JSON data.
@@ -109,6 +110,8 @@ class AlarmSettings {
   ///
   /// Defaults to `false`.
   final bool allowAlarmOverlap;
+  // //NOTE: Alarm enable
+  // final bool enabledAlarm;
 
   /// Converts the `AlarmSettings` instance to a JSON object.
   Map<String, dynamic> toJson() => _$AlarmSettingsToJson(this);
@@ -147,6 +150,7 @@ class AlarmSettings {
     bool? warningNotificationOnKill,
     bool? androidFullScreenIntent,
     bool? allowAlarmOverlap,
+    //bool? enabledAlarm,
   }) {
     return AlarmSettings(
       id: id ?? this.id,
@@ -161,6 +165,7 @@ class AlarmSettings {
       androidFullScreenIntent:
           androidFullScreenIntent ?? this.androidFullScreenIntent,
       allowAlarmOverlap: allowAlarmOverlap ?? this.allowAlarmOverlap,
+      //enabledAlarm: enabledAlarm ?? this.enabledAlarm,
     );
   }
 }
