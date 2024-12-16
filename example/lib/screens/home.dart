@@ -94,8 +94,9 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
         title: const Text('alarm $version'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.menu_book_rounded),
-            onPressed: launchReadmeUrl,
+            //NOTE: 右上のアイコン
+            icon: const Icon(Icons.add_alarm),
+            onPressed: () => navigateToAlarmScreen(null), //NOTE: アラーム追加の画面を開く
           ),
         ],
       ),
@@ -127,6 +128,7 @@ class _ExampleAlarmHomeScreenState extends State<ExampleAlarmHomeScreen> {
                 ),
               ),
       ),
+      //NOTE: Footerのボタン
       floatingActionButton: Padding(
         padding: const EdgeInsets.all(10),
         child: Row(
